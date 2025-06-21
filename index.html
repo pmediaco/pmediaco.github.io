@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Prestige Media</title>
     <style>
-      /* Reset básico */
       * {
         margin: 0;
         padding: 0;
@@ -49,7 +48,7 @@
       .contenido {
         padding: 50px 20px;
         min-height: 400px;
-        background-image: url('fondo.jpg'); /* ← tú subes tu imagen con ese nombre */
+        background-image: url('fondo.jpg');
         background-size: cover;
         background-position: center;
         text-align: center;
@@ -69,8 +68,29 @@
         display: inline-block;
         padding: 10px 20px;
       }
+
+      section {
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: auto;
+        border-bottom: 1px solid #333;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #fff;
+        border-bottom: 2px solid #555;
+        padding-bottom: 10px;
+      }
+
+      section p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
     </style>
   </head>
+
   <body>
     <header>Prestige Media</header>
 
@@ -81,45 +101,33 @@
       <a href="#contacto">Contacto</a>
     </nav>
 
-<div class="contenido">
-  <h1>Bienvenido a Prestige Media</h1>
-  <br />
-  <p>Estamos construyendo algo increíble...</p>
-  <!-- Aquí insertamos la imagen debajo del texto -->
-  <img src="web_fondo.png" alt="Imagen de fondo" style="width: 100%; margin-top: 20px; border-radius: 10px;" />
+    <div class="contenido">
+      <h1>Bienvenido a Prestige Media</h1>
+      <br />
+      <p>Estamos construyendo algo increíble...</p>
+      <br /><br />
+      <img src="web_fondo.png" alt="Imagen de fondo" style="width: 100%; margin-top: 20px; border-radius: 10px;" />
+    </div>
 
-</div>
+    <section id="servicios">
+      <h2>Nuestros servicios</h2>
+      <p>Dispara tus ingresos a través de la última tecnología en la captación de clientes.</p>
+      <p>Evoluciona a publicidad 100% personalizada para tus clientes. Convierte tus tratamientos en un servicio personalizado y adaptado a cada persona.</p>
+      <p>Pídenos un diagnóstico de tu servicio actual de marketing o, si no tienes uno, de cómo podría disparar tus ingresos.</p>
+      <p>Una vez tengamos un diagnóstico inicial, podremos hablar de la implantación de Inteligencia Artificial para un servicio eficiente y personalizado para todos los clientes que captaremos para tu negocio.</p>
+      <p>Si estás contento con tus nuevos ingresos y experiencia para nuevos clientes, podremos seguir gestionándote las campañas de marketing y aplicar los últimos avances tecnológicos a tu negocio.</p>
+    </section>
+
+    <section id="nosotros">
+      <h2>Quiénes somos</h2>
+      <p>Un equipo de élite dispuesto a llevar tu negocio al siguiente nivel.</p>
+      <p>Formado por expertos en marketing, procesos tecnológicos y operaciones, todos ellos con experiencia en las principales compañías multinacionales.</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacta y despega</h2>
+      <p>Contacta con nosotros y empieza ya a ofrecer servicios de calidad superior a tus clientes.</p>
+      <p>Correo: <a href="mailto:prestigemedia@gmail.com" style="color: #ccc;">prestigemedia@gmail.com</a></p>
+    </section>
   </body>
-
-  <div id="servicios">
-  <h2>Nuestros servicios</h2>
-  <br />
-  <p>Dispara tus ingresos a través de la última tecnología en la captación de clientes</p>
-  <br />
-  <p>Evoluciona a publicidad 100% personalizada para tus clientes. Convierte tus tratamientos en un servicio personalizado y adaptado a cada persona</p>
-  <br />
-  <p>Pidenos un diagnostico de tu servicio actual de marketing o si no tienes uno de como podria disparar tus ingresos.</p>
-  <br />
-  <p>Una vez tengamos un diagnostico inicial podremos hablar de la implantacion de Inteligencia Artificial par aun servicio eficiente y personalizado para todos los clientes que captaremos para tu negocio</p>
-  <br />
-  <p>Si estas contento con tus nuevos ingresos y experiencia para nuevos clientes, podremos seguir gestionandote las campañas de marketing y aplicar los últimos avances técnologicos a tu negocio </p>
-
-
-  <div id="nosotros">
-  </h2>Quienes somos</h2>
-  <br />
-  <p>Un equipo de elite dispuesto a llevar a tu negocio al siguiente nivel</p>
-  <br />
-  <p>Formado por expertos en marketing, procesos tecnologicos y operaciones todos ellos con experiencia en las principales compañias multinacionales.</p>
-  ...
-</div>
-
-
-  <div id="contacto">
-  <h2>Contacta y desepega</h2>
-  <br />
-  <p>Contacta con nosotroa y empieza ya a ofrecer servicios de calidad superior a tus cleintes</p>
-  <br />
-  <p>Correo: prestigemedia@gmail.com</p>
-
 </html>
