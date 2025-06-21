@@ -90,7 +90,8 @@
         margin-bottom: 20px;
         line-height: 1.6;
       }
-      @keyframes fadeUp {
+
+@keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -102,8 +103,37 @@
 }
 
 header {
+  font-family: 'Playfair Display', serif;
+  animation: fadeUp 1.2s ease-out;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #fff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+header.animate {
   animation: fadeUp 1.2s ease-out;
 }
+
+
+
+
+header {
+  animation: fadeUp 1.2s ease-out;
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+
     </style>
   </head>
 <script>
