@@ -166,6 +166,19 @@
       form button:hover {
         background-color: #ccc;
       }
+
+
+      .imagen-animada {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .imagen-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
     </style>
   </head>
 
@@ -191,7 +204,7 @@
       <h2>Nuestros servicios</h2>
       <p>Dispara tus ingresos a través de la última tecnología en la captación de clientes.</p>
       <p>Evoluciona a publicidad 100% personalizada para tus clientes.</p>
-      <img src="imagen_2.jpg" alt="Lo que nos hace diferentes" style="max-width: 100%; margin: 20px auto; display: block; border-radius: 10px;" />
+      <img src="imagen_2.png" alt="Lo que nos hace diferentes"  class="imagen-animada" style="max-width: 100%; margin: 20px auto; display: block; border-radius: 10px;" />
     </section>
 
     <section id="nosotros">
@@ -241,5 +254,50 @@
         }
       });
     </script>
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+    
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                header.classList.add("animate");
+              } else {
+                header.classList.remove("animate");
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+    
+        if (header) {
+          observer.observe(header);
+        }
+    
+        // EFECTO SCROLL PARA IMÁGENES
+        const imagenes = document.querySelectorAll('.imagen-animada');
+        const imagenObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('imagen-visible');
+                imagenObserver.unobserve(entry.target); // Para que no se repita
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+    
+        imagenes.forEach(imagen => {
+          imagenObserver.observe(imagen);
+        });
+      });
+    </script>
+
+    
   </body>
 </html>
