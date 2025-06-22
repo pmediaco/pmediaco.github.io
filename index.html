@@ -25,6 +25,21 @@
         font-weight: 600;
         border-bottom: 2px solid #fff;
         letter-spacing: 1px;
+        font-family: 'Playfair Display', serif;
+        animation: fadeUp 1.2s ease-out;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      header::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: #fff;
+        margin: 10px auto 0;
+        border-radius: 2px;
+        opacity: 0.7;
       }
 
       nav {
@@ -91,122 +106,68 @@
         line-height: 1.6;
       }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-header {
-  font-family: 'Playfair Display', serif;
-  animation: fadeUp 1.2s ease-out;
-  transition: all 0.3s ease;
-  position: relative;
-}
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #111;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      }
 
-header::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #fff;
-  margin: 10px auto 0;
-  border-radius: 2px;
-  opacity: 0.7;
-}
+      form label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #ccc;
+      }
 
-header.animate {
-  animation: fadeUp 1.2s ease-out;
-}
+      form input,
+      form textarea {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #444;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 1rem;
+        width: 100%;
+      }
 
+      form input:focus,
+      form textarea:focus {
+        outline: none;
+        border-color: #888;
+      }
 
+      form button {
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
 
-
-header {
-  animation: fadeUp 1.2s ease-out;
-}
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background-color: #111;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-form label {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ccc;
-}
-
-form input,
-form textarea {
-  background-color: #222;
-  color: #fff;
-  border: 1px solid #444;
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 1rem;
-  width: 100%;
-}
-
-form input:focus,
-form textarea:focus {
-  outline: none;
-  border-color: #888;
-}
-
-form button {
-  background-color: #fff;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background-color: #ccc;
-}
-
-
-
+      form button:hover {
+        background-color: #ccc;
+      }
     </style>
   </head>
-<script>
-  const header = document.querySelector("header");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          header.classList.add("animate");
-        } else {
-          header.classList.remove("animate");
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  observer.observe(header);
-</script>
-
 
   <body>
     <header>
@@ -222,55 +183,63 @@ form button:hover {
 
     <div class="contenido">
       <h1>Bienvenido a Prestige Media</h1>
-      <br />
       <p>Estamos construyendo algo increíble...</p>
-      <br /><br />
       <img src="web_fondo.png" alt="Imagen de fondo" style="width: 100%; margin-top: 20px; border-radius: 10px;" />
     </div>
 
     <section id="servicios">
       <h2>Nuestros servicios</h2>
       <p>Dispara tus ingresos a través de la última tecnología en la captación de clientes.</p>
-      <p>Evoluciona a publicidad 100% personalizada para tus clientes. Convierte tus tratamientos en un servicio personalizado y adaptado a cada persona.</p>
-      <img 
-        src="imagen_2.jpg" 
-        alt="Presentación, lo que nos hace diferentes" 
-        style="max-width: 100%; height: auto; margin: 20px auto; display: block; border-radius: 10px;" 
-        data-aos="fade-left" 
-        data-aos-duration="1000">
-      <p>Pídenos un diagnóstico de tu servicio actual de marketing o, si no tienes uno, como un plan nuevo y personalizado podría disparar tus ingresos.</p>
-      <p>Una vez tengamos un diagnóstico inicial, podremos hablar de la implantación de Inteligencia Artificial para un servicio eficiente y personalizado para todos los clientes que captaremos para tu negocio.</p>
-      <p>Si estás contento con tus nuevos ingresos y experiencia para nuevos clientes, podremos seguir gestionándote las campañas de marketing y aplicar los últimos avances tecnológicos a tu negocio.</p>
+      <p>Evoluciona a publicidad 100% personalizada para tus clientes.</p>
+      <img src="imagen_2.jpg" alt="Lo que nos hace diferentes" style="max-width: 100%; margin: 20px auto; display: block; border-radius: 10px;" />
     </section>
 
     <section id="nosotros">
       <h2>Quiénes somos</h2>
       <p>Un equipo de élite dispuesto a llevar tu negocio al siguiente nivel.</p>
-      <p>Sabemos los problemas que tiene el marketing digital y los efectos de no aplicar las nuevas tecnologías a tu negocio.</p>
-      <img src="imagen_4.png" alt="Defectos del marketing actual" style="max-width: 100%; height: auto; margin: 20px auto; display: block; border-radius: 10px;">
-      <p>En este punto surge PrestigeMedia.</p>
-      <img src="imagen_3.png" alt="Porque nosotros" style="max-width: 100%; height: auto; margin: 20px auto; display: block; border-radius: 10px;">
-      <p>Formado por expertos en marketing, procesos tecnológicos y operaciones, todos ellos con experiencia en las principales compañías multinacionales.</p>
+      <img src="imagen_4.png" alt="Defectos del marketing actual" style="max-width: 100%; margin: 20px auto; display: block; border-radius: 10px;">
     </section>
 
     <section id="contacto">
       <h2>Contáctanos y despega</h2>
-      <p>Contacta con nosotros y empieza ya a ofrecer servicios de calidad superior a tus clientes.</p>
       <p>Correo: <a href="mailto:prestigemedia@gmail.com" style="color: #ccc;">prestigemedia@gmail.com</a></p>
-      <form action="mailto:tuemail@tudominio.com" method="POST" enctype="text/plain">
+
+      <!-- Este formulario solo funciona con cliente de correo configurado -->
+      <form action="mailto:prestigemedia@gmail.com" method="POST" enctype="text/plain">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" required>
-    
+
         <label for="clinica">Clínica</label>
         <input type="text" id="clinica" name="clinica" required>
-    
+
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
-    
+
         <button type="submit">Enviar</button>
       </form>
-      
     </section>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                header.classList.add("animate");
+              } else {
+                header.classList.remove("animate");
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        if (header) {
+          observer.observe(header);
+        }
+      });
+    </script>
   </body>
 </html>
